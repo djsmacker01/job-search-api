@@ -1,10 +1,10 @@
-const { response } = require('express');
+// const { response } = require('express');
 const express = require('express');
 
 const app = express();
 
 
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 3000;
 
 app.use(express.json())
 
@@ -12,7 +12,7 @@ app.get('/', (req, res) =>{
     let data = {
         hello: ' Hello world',  
     }
-    response.json(data);
+    res.json(data);
 
 })
 
