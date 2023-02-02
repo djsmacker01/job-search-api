@@ -5,7 +5,9 @@ const app = express();
 
 const PORT = process.env.PORT || 3000;
 
+//middleware
 app.use(express.json())
+// app.use(express.send());
 
 app.get('/', (req, res) =>{
     let data = {
@@ -27,7 +29,12 @@ app.get('/info', (req,res)=>{
 
 app.post('/searchbycategory',(req,res)=>{
 
+let searchCategory = req.body.jobCategory
+console.log(`search : ${searchCategory}`)
+const getJOBS = data.filter((job)=>{})
+
 })
+
 
 app.listen(PORT, ()=>{
     console.log(`Server is listening on port: ${PORT}` )
@@ -37,9 +44,6 @@ app.listen(PORT, ()=>{
 // const express = require("express");
 // const cors = require("cors");
 
-// const app = express();
-
-// const PORT = process.env.PORT || 3000;
 
 // app.use(cors());
 // app.use(express.json()); // for parsing application/json
