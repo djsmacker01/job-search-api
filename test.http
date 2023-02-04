@@ -1,17 +1,21 @@
-# GET http://localhost:3000
+GET http://localhost:3000
+
+
+
+
+###
+
+GET http://localhost:3000/details
 
 
 
 
 
 
-GET  http://localhost:3000/details
 
+###
 
+POST  http://localhost:3000/searchbycategory
+content-type: application/json
 
-
-
-
-
-
-GET http://localhost:3000/searchbycategory
+{"jobCategory":"Accounting"}

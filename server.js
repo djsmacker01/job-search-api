@@ -1,78 +1,81 @@
-const express = require('express');
+// const express = require("express");
+// const bodyParser = require("body-parser");
 
-const app = express();
-
+// const app = express();
 
 // const PORT = process.env.PORT || 3000;
-const {PORT = 3000} = process.env
+// const { PORT = 3000 } = process.env;
 
 //middleware
-app.use(express.json())
+// app.use(express.json());
+// app.use(express.urlencoded({ extended: true }));
+// app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(express.send());
 
-app.get('/', (req, res) =>{
-    let data = {
-        hello: ' Hello world',  
-    }
-    res.json(data);
-
-})
-app.get('/details', (req,res)=>{
-  const details = {
-    Name: "John",
-    sex: "male"
-  }
-  res.json(details)
-})
-
-app.get('/info', (req,res)=>{
-    let info ={
-        last_name:'Adedeji',
-        first_name:'Adewale',
-        occupation: 'Full Stack Developer',
-        age:32
-    }
-    res.json(info);
-})
-
-app.post('/searchbycategory',(req,res)=>{
-
-let searchCategory = req.body.jobCategory
-console.log(`search : ${searchCategory}`)
-const getJOBS = data.filter((job)=>{ds})
-
-})
-
-
-app.listen(PORT, ()=>{
-    console.log(`Server is listening on port: ${PORT}` )
-})
-
-
-// const express = require("express");
-// const cors = require("cors");
-
-
-// app.use(cors());
-// app.use(express.json()); // for parsing application/json
-
-// app.get("/", (request, response) => {
-//   let data = { hello: "world" };
-//   response.json(data);
-//   //response.send('HELLO');
+// app.get("/", (req, res) => {
+//   let data1 = {
+//     hello: " Hello world",
+//   };
+//   res.json(data1);
 // });
 
-// app.post("/searchbycategory", (request, response) => {
-//   let searchCriteria = request.body.jobCategory;
-//   console.log(`search=${searchCriteria}`);
-//   let respData = data.filter((job) => job.jobCategory === searchCriteria);
-//   console.log(respData);
-//   response.json(respData);
+// app.get("/details", (req, res) => {
+//   const details = {
+//     Name: "John",
+//     sex: "male",
+//   };
+//   res.json(details);
+// });
+
+// app.get("/info", (req, res) => {
+//   let info = {
+//     last_name: "Adedeji",
+//     first_name: "Adewale",
+//     occupation: "Full Stack Developer",
+//     age: 32,
+//   };
+//   res.json(info);
+// });
+
+// app.post("/searchbycategory", (req, res) => {
+//   let searchCategory = req.body.jobCategory;
+//   console.log(`search : ${searchCategory}`);
+//   let getJob = data.filter((getJobs) => getJobs.jobCategory === searchCategory);
+//   console.log(`getJOBS : ${getJob}`);
+//   res.json(getJob);
 // });
 
 // app.listen(PORT, () => {
-//   console.log(`Server is up and listening on port ${PORT}`);
+//   console.log(`Server is listening on port: ${PORT}`);
 // });
+
+const express = require("express");
+// const cors = require("cors");
+
+const app = express();
+
+const PORT = process.env.PORT || 3000;
+
+// app.use(cors());
+app.use(express.json()); // for parsing application/json
+
+app.get("/", (request, response) => {
+  let data = { hello: "world" };
+  response.json(data);
+  //response.send('HELLO');
+});
+
+app.post("/searchbycategory", (request, response) => {
+  let searchCriteria = request.body.jobCategory;
+  console.log(`search=${searchCriteria}`);
+  let respData = data.filter(job => job.jobCategory === searchCriteria);
+  console.log(respData);
+  response.json(respData);
+});
+
+app.listen(PORT, () => {
+  console.log(`Server is up and listening on port ${PORT}`);
+});
 
 const data = [
   {
