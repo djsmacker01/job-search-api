@@ -3,7 +3,8 @@ const express = require('express');
 const app = express();
 
 
-const PORT = process.env.PORT || 3000;
+// const PORT = process.env.PORT || 3000;
+const {PORT = 3000} = process.env
 
 //middleware
 app.use(express.json())
@@ -15,6 +16,13 @@ app.get('/', (req, res) =>{
     }
     res.json(data);
 
+})
+app.get('/details', (req,res)=>{
+  const details = {
+    Name: "John",
+    sex: "male"
+  }
+  res.json(details)
 })
 
 app.get('/info', (req,res)=>{
@@ -31,7 +39,7 @@ app.post('/searchbycategory',(req,res)=>{
 
 let searchCategory = req.body.jobCategory
 console.log(`search : ${searchCategory}`)
-const getJOBS = data.filter((job)=>{})
+const getJOBS = data.filter((job)=>{ds})
 
 })
 
