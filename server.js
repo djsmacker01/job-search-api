@@ -62,7 +62,7 @@ app.use(express.json()); // for parsing application/json
 app.get("/", (request, response) => {
   let data = { hello: "world" };
   response.json(data);
-  //response.send('HELLO');
+  response.send('HELLO');
 });
 
 app.post("/searchbycategory", (request, response) => {
