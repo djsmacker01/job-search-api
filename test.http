@@ -19,3 +19,6 @@ POST  http://localhost:3000/searchbycategory
 content-type: application/json
 
 {"jobCategory":"IT"}
+
+###
+GET http://localhost:4040/
