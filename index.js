@@ -7,15 +7,23 @@ app.use(express.json())
 
 
 app.get('/',(req, res)=>{
-  let info = {
+  let employeeProfile = {
     firstName: 'John',
     lastName: 'Doe',
     occupation: 'Software Engineer',
     age: 30,
     sex: 'male'
   }
-  res.json(info.age);
+  res.json(employeeProfile);
 })
+
+
+app.get('/api/',(req,res)=>{
+    let passData = {
+
+    }
+})
+
 
 app.listen(PORT,()=>{
     console.log(`Server listening on: ${PORT}`);
